@@ -1,0 +1,1069 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Scale-Up Blueprint – Let's Build A System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{--purple:#9333EA;--bg:#121212;--card:#1C1C1C;--border:#2E2E2E;--muted:#8C8C8C;--ink:#1A1A1A;--grey:#666;--lt:#F5F5F5;--lb:#E0E0E0;--red:#DC2828;--green:#27B07D}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;background:#fff;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.sec{padding:64px 16px}
+.sec.dark{background:var(--bg);color:#FAFAFA}
+.sec.dark2{background:var(--card);color:#FAFAFA}
+.sec.light{background:#fff}
+.wrap{max-width:1152px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:48px}
+.narrow{max-width:768px;width:100%}
+h2.big{font-size:clamp(30px,5vw,48px);line-height:1;font-weight:900;letter-spacing:-1.2px;text-align:center}
+h3.sub{font-size:clamp(18px,3vw,24px);font-weight:700;color:var(--purple);text-align:center;margin-top:8px}
+h3.mid{font-size:clamp(22px,3.5vw,30px);font-weight:700;text-align:center;line-height:1.2}
+.pink{color:var(--purple)}.mut{color:var(--muted)}.grey{color:var(--grey)}
+.center{text-align:center}
+/* buttons */
+.cta-block{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.cta-block .l1{font-size:16px;color:var(--grey)}
+.dark .cta-block .l1,.dark2 .cta-block .l1{color:var(--muted)}
+.cta-block .l2{font-size:18px;font-weight:700}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--purple);color:#fff;font:700 18px 'Poppins';padding:16px 40px;border-radius:9999px;border:0;cursor:pointer;text-decoration:none;box-shadow:0 10px 15px -3px rgba(147,51,234,.25),0 4px 6px -4px rgba(147,51,234,.25);transition:transform .2s,box-shadow .2s;margin-top:12px}
+.btn::before{content:"";position:absolute;inset:12px 0 0;background:var(--purple);opacity:.5;filter:blur(24px);border-radius:9999px;z-index:-1}
+.btn:hover{transform:translateY(-2px) scale(1.03)}
+.btn.block{display:flex;width:100%}
+/* hero */
+.pillbar{position:sticky;top:12px;z-index:50;max-width:896px;margin:0 auto 16px;background:rgba(250,250,250,.95);border-radius:9999px;padding:14px 32px;text-align:center;font-weight:700;font-size:clamp(14px,2.5vw,24px);color:var(--bg);box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+.hero{background:radial-gradient(103% 127% at 28% 8%,rgba(147,51,234,.18) 0,rgba(147,51,234,0) 27%),radial-gradient(101% 124% at 72% 88%,rgba(147,51,234,.14) 0,rgba(147,51,234,0) 23%),#121212;color:#FAFAFA;padding:24px 16px 64px}
+.hero .in{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:24px;padding-top:40px}
+.hero h2{font-size:clamp(26px,4.5vw,36px);font-weight:900;color:var(--purple);text-align:center}
+.video{position:relative;width:100%;max-width:768px;aspect-ratio:16/9;background:#1C1C1C;border:2px solid var(--purple);border-radius:16px;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);overflow:hidden;display:flex;align-items:center;justify-content:center;background-image:linear-gradient(135deg,#242424,#121212)}
+.hero .video .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block}
+.hero .video .play{position:absolute;z-index:2}
+.hero .video .play[hidden]{display:none}
+.play{width:80px;height:80px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;box-shadow:0 25px 50px -12px rgba(0,0,0,.4);cursor:pointer;transition:transform .2s;border:0}
+.play:hover{transform:scale(1.08)}
+.play svg{width:36px;height:36px;margin-left:6px;fill:#fff}
+.hero .lead{max-width:672px;text-align:center;color:var(--muted);font-size:18px;line-height:28px}
+.hero .h-block{max-width:768px;text-align:center;padding-top:48px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hero .h-block h3{font-size:clamp(22px,4vw,30px);font-weight:700;color:rgba(250,250,250,.9)}
+.hero .h-block h1{font-size:clamp(44px,9vw,72px);line-height:1;font-weight:900;color:var(--purple)}
+.hero .h-block h2.w{font-size:clamp(26px,5vw,36px);line-height:1.1;color:#FAFAFA;font-weight:700}
+.hero .rev{padding-top:20px;color:var(--muted);font-size:18px}
+.hero .rev b{display:block;font-size:20px;color:#FAFAFA}
+.dates{padding-top:20px;color:var(--muted);font-size:14px;display:flex;flex-direction:column;gap:4px}
+.urgent{display:flex;align-items:center;gap:8px;color:var(--purple);font-weight:700;font-size:14px;letter-spacing:.7px;text-transform:uppercase;padding-top:12px;text-align:center}
+.urgent i{width:8px;height:8px;border-radius:50%;background:var(--purple);animation:pulse 1.5s infinite;flex:none}
+@keyframes pulse{50%{opacity:.3}}
+.hero .tiny{max-width:448px;text-align:center;color:var(--muted);font-size:14px;line-height:23px}
+/* reserve */
+.reserve{position:relative;overflow:hidden}
+.reserve::before{content:"";position:absolute;width:800px;height:800px;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(147,51,234,.05);filter:blur(150px);border-radius:50%}
+.reserve .wrap{position:relative;gap:40px}
+.reserve p.sub{color:var(--muted);font-size:18px;text-align:center}
+.rcard{position:relative;width:100%;max-width:576px}
+.rcard::before{content:"";position:absolute;inset:12px -4px -4px;background:linear-gradient(135deg,rgba(147,51,234,.3),rgba(147,51,234,.1) 50%,rgba(147,51,234,0));opacity:.5;filter:blur(40px);border-radius:24px}
+.rcard .box{position:relative;background:rgba(28,28,28,.4);border:1px solid rgba(255,255,255,.1);box-shadow:0 25px 50px -12px rgba(0,0,0,.4);backdrop-filter:blur(24px);border-radius:24px;overflow:hidden}
+.rcard .img{height:240px;background-image:url("assets/hotel-novotel.png");background-size:cover;background-position:center 0%;display:flex;align-items:flex-end;padding:24px;position:relative}
+.rcard .img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#1C1C1C 0,rgba(28,28,28,.2) 50%,rgba(28,28,28,0))}
+.rcard .img span{position:relative;z-index:1;font-size:48px;font-weight:900;color:#D8B4FE}
+.rcard .body{padding:36px;display:flex;flex-direction:column;gap:28px}
+.info{display:flex;gap:16px;flex-wrap:wrap}
+.info>div{flex:1;min-width:200px;display:flex;gap:12px}
+.ico{width:40px;height:40px;flex:none;border-radius:50%;background:rgba(147,51,234,.15);display:flex;align-items:center;justify-content:center;font-size:18px}
+.info small{display:block;font-size:11px;letter-spacing:1.1px;text-transform:uppercase;color:var(--muted)}
+.info b{display:block;font-size:16px}
+.info span.t{font-size:14px;color:var(--muted)}
+hr{border:0;border-top:1px solid var(--border)}
+.count{display:flex;gap:12px}
+.count div{flex:1;text-align:center;padding:12px 0;border-radius:12px;border:1px solid rgba(46,46,46,.4);background:linear-gradient(180deg,rgba(36,36,36,.6),rgba(18,18,18,.4))}
+.count b{display:block;font-size:30px;line-height:36px;font-weight:900;color:var(--purple)}
+.count small{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+/* reels */
+.reels{display:flex;gap:32px;flex-wrap:wrap;justify-content:center;width:100%}
+.reel{flex:1;min-width:240px;max-width:320px;aspect-ratio:9/16;border:2px solid var(--purple);border-radius:16px;position:relative;background:linear-gradient(160deg,#242424,#0c0c0c);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.reel .play{width:56px;height:56px}.reel .play svg{width:24px;height:24px;margin-left:3px}
+.views{position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);color:#fff;font-size:12px;padding:6px 10px;border-radius:9999px}
+.reel-cap{text-align:center;font-weight:700;margin-top:16px;max-width:320px}
+.reel-col{display:flex;flex-direction:column;align-items:center;flex:1;min-width:240px;max-width:320px}
+.reel-col .reel{width:100%;flex:none}
+/* proof */
+.badge{background:rgba(147,51,234,.1);color:var(--purple);font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase;padding:6px 12px;border-radius:9999px}
+.chartbox{width:100%;max-width:896px;background:#fff;border:2px solid rgba(147,51,234,.3);border-radius:16px;padding:32px 16px 16px;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
+.bars{display:flex;gap:16px;align-items:flex-end;justify-content:center;height:260px;border-bottom:2px solid var(--lb);padding:0 8px}
+.bars div{flex:1;max-width:120px;background:linear-gradient(180deg,var(--purple),#C084FC);border-radius:8px 8px 0 0;position:relative}
+.bars div span{position:absolute;top:-24px;left:0;right:0;text-align:center;font-weight:700;font-size:14px}
+.bars.l div{background:#d5d5d5}
+.chart-lbl{display:flex;gap:16px;justify-content:center;padding:8px 8px 0;font-size:12px;color:var(--grey);text-align:center}
+.chart-lbl span{flex:1;max-width:120px}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:24px}
+.chartbox h4{text-align:center;font-size:14px;color:var(--grey);margin-bottom:24px}
+.note{font-size:12px;font-style:italic;color:var(--grey);text-align:center}
+/* insta */
+.insta{flex:1;min-width:260px;max-width:345px;border:2px solid var(--purple);border-radius:12px;background:#F5F5F5;overflow:hidden}
+.insta .hd{display:flex;align-items:center;gap:8px;padding:10px;background:#fff}
+.insta .av{width:36px;height:36px;flex:none;border-radius:50%;object-fit:cover}
+.insta .hd small{display:block;color:#737373;font-size:12px}
+.insta .handle{display:flex;align-items:center;gap:4px;min-width:0;flex:1}
+.insta .handle small{min-width:0;white-space:nowrap}
+.insta .verified{width:14px;height:14px;flex:none;border-radius:50%;background:#3897F0;color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;line-height:1}
+.insta .vp{margin-left:auto;background:#9333EA;color:#fff;font-size:14px;font-weight:600;padding:5px 10px;border-radius:3px;text-decoration:none;white-space:nowrap}
+.insta .pic{aspect-ratio:4/5;position:relative;overflow:hidden;background:linear-gradient(160deg,#2a2a2a,#0e0e0e);display:flex;align-items:center;justify-content:center}
+.insta .pic .event-video{width:100%;height:100%;flex:none;object-fit:cover;display:block}
+.insta .pic .play{position:absolute;z-index:2}
+.insta .pic .play[hidden],.insta .pic .video-error[hidden]{display:none}
+.insta .pic .video-error{position:absolute;z-index:3;left:12px;right:12px;bottom:12px;padding:8px 10px;border-radius:8px;background:rgba(0,0,0,.75);color:#fff;font-size:12px;text-align:center;pointer-events:none}
+.insta .ft{background:#fff;padding:10px;font-size:14px;font-weight:600}
+.insta .ft a{display:block;color:#9333EA;margin-top:6px;text-decoration:none}
+.watch{display:block;text-align:center;padding:12px;color:var(--grey);font-size:14px;text-decoration:none}
+@media(max-width:360px){.insta .hd{flex-wrap:wrap}.insta .handle{flex:0 1 auto}}
+/* logos */
+.logos{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;width:100%;max-width:1024px}
+.logo{width:176px;height:176px;border-radius:16px;border:1px dashed var(--lb);background:var(--lt);display:flex;align-items:center;justify-content:center;color:#aaa;font-size:12px;text-align:center;padding:12px}
+.worked-with .logos{display:grid;grid-template-columns:repeat(4,240px);gap:16px;justify-content:center;max-width:1024px}
+.worked-with .logo{width:240px;height:190px;border:0;background:transparent;padding:0;display:flex;align-items:center;justify-content:center}
+.worked-with .logo img{width:100%;height:100%;object-fit:contain;object-position:center}
+@media(max-width:1040px){.worked-with .logos{grid-template-columns:repeat(2,minmax(0,240px))}.worked-with .logo{width:100%}}
+@media(max-width:360px){.worked-with .logos{grid-template-columns:minmax(0,240px)}}
+/* leak */
+.leakbox{width:100%;max-width:1024px;background:rgba(28,28,28,.6);border:1px solid rgba(46,46,46,.4);border-radius:16px;padding:32px;overflow-x:auto}
+.funnel{display:flex;gap:12px;align-items:stretch;min-width:620px}
+.funnel div{flex:1;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
+.funnel b{display:block;color:var(--purple);font-size:15px}
+.funnel small{color:var(--muted);font-size:12px}
+.funnel .arrow{flex:none;width:auto;background:none;border:0;padding:0;align-self:center;color:var(--purple);font-size:20px}
+/* diff */
+.diffgrid{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1024px;width:100%}
+.gc{background:rgba(28,28,28,.6);border:1px solid rgba(46,46,46,.4);border-radius:16px;padding:32px;display:flex;flex-direction:column;gap:16px}
+.gc.g{border-color:rgba(147,51,234,.3)}
+.gc h4{font-size:20px;display:flex;gap:12px}
+.gc .q{background:rgba(28,28,28,.6);border-radius:12px;padding:12px;color:var(--purple);font-style:italic}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1024px;width:100%;background:rgba(28,28,28,.6);border:1px solid rgba(46,46,46,.4);border-radius:16px;padding:32px}
+.three div{background:rgba(28,28,28,.5);border-radius:12px;padding:16px;text-align:center}
+.three b{color:var(--purple);display:block}
+.three span{font-size:14px;color:var(--muted)}
+.bar-pink{max-width:1024px;width:100%;background:var(--purple);border-radius:12px;padding:16px;text-align:center;font-weight:700;font-size:18px;color:#fff}
+/* case snapshot */
+.snap{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1024px;width:100%;text-align:center}
+.snap small{display:block;text-transform:uppercase;letter-spacing:.7px;color:var(--grey);font-size:14px;margin-bottom:8px}
+.snap b{font-size:16px}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:896px;width:100%}
+.bacard{background:rgba(245,245,245,.8);border:1px solid rgba(224,224,224,.5);border-radius:16px;padding:32px;box-shadow:0 20px 25px -5px rgba(0,0,0,.2),0 8px 10px -6px rgba(0,0,0,.2)}
+.bacard.ok{border-color:rgba(39,176,125,.3)}
+.bacard h4{font-size:20px;margin-bottom:16px}
+.bacard li{list-style:none;display:flex;gap:8px;color:var(--grey);margin-bottom:12px}
+.bacard li::before{content:"•";color:var(--red)}
+.bacard.ok li::before{content:"✓";color:var(--green)}
+.rlink{color:var(--purple);font-weight:700;text-decoration:none;text-align:center}
+/* tabs */
+.tabs{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.tab{position:relative;display:flex;align-items:center;gap:12px;padding:16px 32px;border-radius:12px;border:2px solid var(--border);background:transparent;color:var(--muted);font-family:inherit;cursor:pointer;text-align:left;transition:.2s}
+.tab b{display:block;font-size:16px}.tab small{font-size:12px;font-weight:700;opacity:.8}
+.tab.active{background:var(--purple);border-color:var(--purple);color:#fff;box-shadow:0 10px 15px -3px rgba(147,51,234,.25)}
+.tab .sel{background:rgba(250,250,250,.2);font-size:12px;font-weight:700;padding:4px 8px;border-radius:4px;display:none}
+.tab.active .sel{display:block}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:32px;max-width:1024px;width:100%}
+.panel{background:rgba(28,28,28,.8);border:1px solid rgba(46,46,46,.5);border-radius:16px;padding:32px;box-shadow:0 20px 25px -5px rgba(0,0,0,.2)}
+.panel.hl{border-color:rgba(147,51,234,.3)}
+.panel h4{font-size:20px;margin-bottom:24px;display:flex;gap:8px;align-items:center}
+.panel li{list-style:none;position:relative;padding-left:20px;color:var(--muted);margin-bottom:16px}
+.panel li::before{content:"•";position:absolute;left:0;color:var(--red);font-weight:700}
+.panel.hl li::before{content:"✓";color:var(--green)}
+/* one day */
+.oneday{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;max-width:1024px;width:100%}
+.ph{border-radius:16px;background:linear-gradient(135deg,#ececec,#d6d6d6);aspect-ratio:3/2;display:flex;align-items:center;justify-content:center;color:#999;font-size:13px;text-align:center;padding:12px}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:896px;width:100%}
+.photos .ph{aspect-ratio:440/256}
+.oneday h3{font-size:30px;line-height:36px;margin-bottom:12px}
+.oneday p{margin-bottom:16px;color:var(--grey)}
+.oneday p.s{color:var(--ink)}
+/* list pills */
+.pills{display:flex;flex-direction:column;gap:16px;max-width:768px;width:100%}
+.pill{display:flex;gap:16px;padding:16px;border-radius:12px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+.pill::before{content:"•";color:var(--purple);font-weight:700;font-size:18px}
+.pills.l .pill{background:var(--lt);border-color:var(--lb);color:var(--ink);font-weight:700}
+.pills.l .pill::before{color:var(--red)}
+.pills.chk .pill{align-items:center;font-weight:400}
+.pills.chk .pill::before{content:"✓";color:var(--green);font-size:20px;font-weight:400}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;max-width:1024px;width:100%}
+.stat{background:rgba(245,245,245,.5);border:1px solid rgba(224,224,224,.3);border-radius:16px;padding:24px;text-align:center}
+.stat b{display:block;font-size:48px;line-height:48px;font-weight:900;color:var(--purple)}
+.stat span{font-size:14px;color:var(--grey)}
+/* success grid */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1024px;width:100%}
+.sc{position:relative;height:320px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#2c2c2c,#0e0e0e);box-shadow:0 20px 25px -5px rgba(0,0,0,.3);display:flex;align-items:flex-end}
+.sc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#121212 0,rgba(18,18,18,.6) 50%,rgba(18,18,18,0))}
+.sc div{position:relative;z-index:1;padding:24px;width:100%}
+.sc span{display:inline-block;background:rgba(147,51,234,.2);color:var(--purple);font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:8px}
+.sc h4{color:#fff;font-size:18px}
+.sc p{color:var(--purple);font-weight:700;font-size:14px}
+/* bonus */
+.bonus{display:grid;grid-template-columns:384px 1fr;gap:48px;align-items:center;max-width:1024px;width:100%}
+.bonus .img{width:100%;max-width:450px;height:auto;aspect-ratio:auto;border-radius:0;background:none;border:0;display:block;margin:0 auto}
+.bonus .img img{display:block;width:100%;height:auto;object-fit:contain}
+.bonus h4{font-size:20px;margin-bottom:24px}
+.bonus li{list-style:none;position:relative;padding-left:20px;color:var(--muted);margin-bottom:16px}
+.bonus li::before{content:"•";position:absolute;left:0;color:var(--purple);font-weight:700}
+/* nobrainer */
+.nb{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1152px}
+.nb+.nb{margin-top:32px}
+.nb .ph{box-shadow:0 25px 50px -12px rgba(0,0,0,.25);border-radius:24px}
+.nb .hd{display:flex;gap:16px;align-items:center;margin-bottom:16px}
+.nb .ico2{width:56px;height:56px;flex:none;border-radius:16px;background:rgba(147,51,234,.2);display:flex;align-items:center;justify-content:center;font-size:24px}
+.nb h3{font-size:20px;line-height:28px}
+.nb p{color:var(--grey);margin-bottom:16px;line-height:26px}
+.nb p.k{color:var(--purple);font-weight:700;line-height:24px}
+/* host */
+.host{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(32px,5vw,56px);align-items:center;max-width:1080px;width:100%;margin:0 auto}
+.host .pic{width:100%;max-width:360px;aspect-ratio:4/5;justify-self:center;border-radius:24px;overflow:hidden;background:#121212;box-shadow:0 25px 50px -12px rgba(0,0,0,.25),0 0 80px rgba(147,51,234,.2);display:flex;align-items:center;justify-content:center;color:#666;font-size:13px}
+.host .pic img{width:100%;height:100%;object-fit:contain;object-position:center bottom;border-radius:inherit}
+.host small{color:var(--purple);font-weight:700;letter-spacing:1.4px;text-transform:uppercase;font-size:14px}
+.host h2{font-size:clamp(34px,5vw,48px);font-weight:900;line-height:1;margin:12px 0 20px}
+.host p{color:var(--muted);line-height:26px;margin-bottom:20px}
+.host p b{color:#FAFAFA}
+.hstats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-top:8px}
+.hstats div{background:rgba(147,51,234,.1);border-radius:12px;padding:16px;text-align:center}
+.hstats b{display:block;font-size:24px;font-weight:900;color:var(--purple)}
+.hstats span{font-size:12px;color:var(--muted)}
+/* who */
+.who{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;max-width:1152px}
+.who div{width:172px;text-align:center;font-weight:700;font-size:14px;color:var(--muted)}
+.who .ph{width:172px;height:172px;aspect-ratio:auto;margin-bottom:16px;background:linear-gradient(160deg,#2c2c2c,#161616);box-shadow:0 20px 25px -5px rgba(0,0,0,.3);color:#555}
+/* guarantee */
+.gbox{max-width:896px;width:100%;display:flex;flex-direction:column;gap:48px}
+.g1{background:rgba(28,28,28,.4);border:1px solid rgba(255,255,255,.05);backdrop-filter:blur(12px);border-radius:16px;padding:48px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
+.seal{width:144px;height:144px;border-radius:50%;background:radial-gradient(circle,rgba(147,51,234,.35),rgba(147,51,234,.05));border:3px solid var(--purple);display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--purple);font-size:28px;line-height:1.1;text-align:center;box-shadow:0 0 60px rgba(147,51,234,.3)}
+.g2{background:rgba(147,51,234,.1);border:1px solid rgba(147,51,234,.2);border-radius:24px;padding:40px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.g2 p{color:var(--muted);font-size:18px;line-height:28px;max-width:576px}
+/* faq */
+.faq{max-width:768px;width:100%;display:flex;flex-direction:column;gap:16px}
+.fq{background:rgba(245,245,245,.4);border:1px solid rgba(224,224,224,.5);border-radius:16px;padding:0 24px;box-shadow:0 10px 25px -12px rgba(0,0,0,.15)}
+.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;background:none;border:0;font:700 16px/24px 'Poppins';color:var(--ink);cursor:pointer;text-align:left}
+.fq button::after{content:"⌄";font-size:20px;transition:transform .2s;flex:none}
+.fq.open button::after{transform:rotate(180deg)}
+.fq .a{max-height:0;overflow:hidden;transition:max-height .3s;color:var(--grey);font-size:15px}
+.fq.open .a{max-height:300px}
+.fq .a p{padding-bottom:20px}
+footer{background:var(--bg);color:var(--muted);text-align:center;padding:32px 16px;font-size:13px}
+.shade-light{background:#fff}
+@media(max-width:860px){
+.sec{padding:48px 16px}
+.cmp,.ba,.twocol,.diffgrid,.oneday,.photos,.nb,.host,.bonus{grid-template-columns:1fr}
+.three,.snap,.stats,.grid3{grid-template-columns:1fr 1fr}
+.host{gap:32px}.bonus .img{max-width:450px;margin:0 auto}
+.nb.rev .ph{order:-1}
+.hstats{grid-template-columns:1fr 1fr 1fr}
+.btn{padding:16px 28px;font-size:16px}
+}
+@media(max-width:520px){
+.three,.snap,.stats,.grid3{grid-template-columns:1fr}
+.count b{font-size:22px}.rcard .body{padding:24px}
+.pillbar{padding:12px 16px}
+}
+
+/* Registration modal */
+body.modal-open{overflow:hidden}
+.registration-modal[hidden]{display:none!important}
+.registration-modal{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px)}
+.registration-dialog{position:relative;width:min(100%,560px);max-height:92vh;overflow-y:auto;background:#121212;color:#FAFAFA;border:1px solid rgba(147,51,234,.45);border-radius:24px;box-shadow:0 24px 90px rgba(0,0,0,.6),0 0 40px rgba(147,51,234,.12);padding:clamp(22px,5vw,36px)}
+.registration-close{position:absolute;right:16px;top:14px;width:38px;height:38px;border:1px solid #333;border-radius:50%;background:#1c1c1c;color:#fff;font-size:24px;line-height:1;cursor:pointer}
+.registration-kicker{color:#9333EA;text-transform:uppercase;letter-spacing:1.5px;font-size:11px;font-weight:700;margin-bottom:8px}
+.registration-dialog h2{font-size:clamp(25px,5vw,34px);line-height:1.12;font-weight:900;margin:0 42px 8px 0}
+.registration-intro{color:#aaa;font-size:14px;margin-bottom:24px}
+.registration-progress{display:flex;gap:8px;margin:0 0 24px}
+.registration-progress span{height:4px;flex:1;border-radius:9px;background:#333}
+.registration-progress span.active{background:#9333EA;box-shadow:0 0 12px rgba(147,51,234,.45)}
+.registration-fields{display:grid;gap:14px}
+.registration-fields label{display:grid;gap:7px;color:#e5e5e5;font-size:13px;font-weight:700}
+.registration-fields input,.registration-fields select{width:100%;min-height:48px;padding:12px 14px;border:1px solid #383838;border-radius:10px;background:#1c1c1c;color:#fff;font:400 15px 'Poppins',sans-serif;outline:none}
+.registration-fields input:focus,.registration-fields select:focus{border-color:#9333EA;box-shadow:0 0 0 3px rgba(147,51,234,.14)}
+.registration-fields input::placeholder{color:#777}
+.registration-error{color:#ff7777;font-size:13px;min-height:18px;margin-top:8px}
+.registration-actions{display:flex;gap:12px;margin-top:18px}
+.registration-actions .btn{margin-top:0;flex:1;padding:14px 20px;font-size:15px}
+.registration-back{background:transparent;color:#fff;border:1px solid #444;border-radius:9999px;padding:12px 20px;font:700 15px 'Poppins',sans-serif;cursor:pointer}
+.registration-passes{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.registration-pass{border:1px solid #393939;border-radius:16px;background:#1b1b1b;color:#fff;padding:20px 14px;text-align:left;cursor:pointer;transition:border-color .2s,background .2s,transform .2s}
+.registration-pass:hover{transform:translateY(-2px);border-color:#9333EA}
+.registration-pass.selected{border:2px solid #9333EA;background:rgba(147,51,234,.12);box-shadow:0 0 24px rgba(147,51,234,.12)}
+.registration-pass .pass-name{display:block;font-size:16px;font-weight:700}
+.registration-pass .pass-price{display:block;color:#9333EA;font-size:27px;font-weight:900;margin:8px 0}
+.registration-pass small{display:block;color:#aaa;font-size:12px}
+.registration-benefits{margin-top:16px;padding:17px;border:1px solid rgba(147,51,234,.35);border-radius:14px;background:linear-gradient(135deg,rgba(147,51,234,.10),rgba(255,255,255,.02))}
+.registration-benefits h3{font-size:14px;margin:0 0 10px;color:#fff}
+.registration-benefits ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.registration-benefits li{font-size:12px;line-height:1.5;color:#d7d7d7;padding-left:22px;position:relative}
+.registration-benefits li:before{content:"✓";position:absolute;left:0;color:#9333EA;font-weight:900}
+.registration-submit-note{font-size:12px;color:#999;text-align:center;margin-top:10px}
+.registration-confirmation{position:relative}
+.confetti-piece{position:fixed;top:-14px;width:8px;height:12px;z-index:10001;pointer-events:none;animation:confetti-fall 2.8s ease-in forwards}
+@keyframes confetti-fall{to{transform:translate3d(var(--drift),105vh,0) rotate(760deg);opacity:.15}}
+.registration-pass .pass-check{display:block;text-align:right;color:#9333EA;font-size:12px;font-weight:700;margin-top:12px;min-height:18px}
+.registration-confirmation{text-align:center;padding:12px 0 4px}
+.registration-success-icon{width:68px;height:68px;border-radius:50%;margin:0 auto 18px;background:rgba(147,51,234,.14);border:1px solid rgba(147,51,234,.5);display:grid;place-items:center;color:#9333EA;font-size:34px}
+.registration-confirmation h2{margin:0 0 12px}
+.registration-confirmation p{color:#aaa;font-size:14px;margin-bottom:18px}
+.registration-summary{border:1px solid #333;background:#1b1b1b;border-radius:12px;padding:14px;margin:0 0 18px;text-align:left;font-size:14px}
+.registration-summary b{color:#9333EA}
+@media(max-width:480px){.registration-dialog{padding:24px 18px;border-radius:18px}.registration-passes{grid-template-columns:1fr}.registration-pass{padding:16px}.registration-actions{flex-direction:column}.registration-actions .btn{width:100%}}
+
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="pillbar">Attention Business owners doing 1Cr+ Annually</div>
+  <div class="in">
+    <h2>Watch This Video First</h2>
+    <div class="video"><video class="hero-video" src="assets/ANOTHER WORKSHOP hero section .mov" poster="assets/hero-video-thumbnail.jpg" preload="metadata" playsinline></video><button type="button" class="play" aria-label="Play video"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button></div>
+    <p class="lead">Before exploring the rest of this page, watch this short video to understand what Business Scale-Up Blueprint (Business Scale-Up Blueprint) is, how we work with your business, and how our implementation process works from start to finish.</p>
+
+    <div class="h-block">
+      <h3>No More Chasing Clients.</h3>
+      <h1>Let's Build A System</h1>
+      <h2 class="w">Where Clients Want You More Than Ever.</h2>
+      <p class="rev">For business owners generating <b>₹1 Cr+ in revenue per year</b></p>
+      <div class="dates">
+        <span>Business Scale-Up Blueprint Evening · 21st November 2026</span>
+        <span>Main Event · 22nd November 2026</span>
+        <span>Novotel Mumbai International Airport, Mumbai</span>
+      </div>
+      <a href="#reserve" class="btn">Let's Start</a>
+      <div class="urgent"><i></i>Act Fast! Limited Seats Available for This Event</div>
+      <p class="tiny">Want the right sales team? Learn the exact method to hire sales people who actually perform.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var video=document.querySelector('.hero .hero-video');
+  var playButton=document.querySelector('.hero .video .play');
+  if(!video||!playButton)return;
+  playButton.addEventListener('click',function(){
+    if(video.ended)video.currentTime=0;
+    video.controls=true;
+    var playback=video.play();
+    if(playback&&typeof playback.catch==='function')playback.catch(function(){playButton.hidden=false;});
+  });
+  video.addEventListener('play',function(){
+    playButton.hidden=true;
+    playButton.setAttribute('aria-label','Play video');
+  });
+  video.addEventListener('pause',function(){
+    if(!video.ended)playButton.hidden=false;
+  });
+  video.addEventListener('ended',function(){
+    playButton.hidden=false;
+    playButton.setAttribute('aria-label','Replay video');
+  });
+  window.addEventListener('scroll',function(){
+    if(!video.paused)video.pause();
+  },{passive:true});
+})();
+</script>
+
+<!-- RESERVE -->
+<section class="sec dark reserve" id="reserve">
+  <div class="wrap">
+    <div class="center">
+      <h2 class="big">Reserve Your Seat.</h2>
+      <p class="sub" style="margin-top:16px">Free up the founder from daily sales headaches — live, in-room, only.</p>
+    </div>
+    <div class="rcard"><div class="box">
+      <div class="img"><span>MUMBAI</span></div>
+      <div class="body">
+        <div class="info">
+          <div><div class="ico">📍</div><div><small>Venue</small><b>Novotel Mumbai International Airport</b><span class="t">Mumbai</span></div></div>
+          <div><div class="ico">📅</div><div><small>Main Event</small><b>22nd November 2026</b><span class="t">Sunday – 10:00 AM to 1:00 PM</span></div></div>
+        </div>
+        <hr>
+        <div class="count" id="count">
+          <div><b id="cd">00</b><small>Days</small></div>
+          <div><b id="ch">00</b><small>Hours</small></div>
+          <div><b id="cm">00</b><small>Mins</small></div>
+          <div><b id="cs">00</b><small>Secs</small></div>
+        </div>
+        <a href="#" class="btn block">Let's Start</a>
+        <p class="center mut" style="font-size:14px">Want the right sales team? Learn the exact method to hire sales people who actually perform.</p>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- INDUSTRY LEADERS -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="center"><h2 class="big">What Industry Leaders</h2><h3 class="sub">Think About Us</h3></div>
+    <div class="reels">
+      <div class="reel"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 10,240 views</span></div>
+      <div class="reel"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 5,830 views</span></div>
+      <div class="reel"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 7,150 views</span></div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;padding-top:32px">
+      <span class="badge">Proof Our Training Works</span>
+      <h3 class="mid pink">+21.9% Conversion Lift in Just 1 Month</h3>
+      <p class="grey center" style="max-width:672px">Real, measurable results from a mutual-fund sales team after just one month of training. Their 1st-to-2nd meeting conversion jumped from 26.5% to 32.3% — and 1st meetings booked grew by +174%.</p>
+      <div class="chartbox">
+        <div class="cmp">
+          <div><h4>1st → 2nd Meeting Conversion</h4>
+            <div class="bars l"><div style="height:26.5%"><span>26.5%</span></div><div style="height:32.3%;background:linear-gradient(180deg,var(--purple),#C084FC)"><span>32.3%</span></div></div>
+            <div class="chart-lbl"><span>Before</span><span>After 1 month</span></div></div>
+          <div><h4>Meetings Booked Growth</h4>
+            <div class="bars"><div style="height:60%"><span>+174%</span></div><div style="height:100%"><span>+233%</span></div></div>
+            <div class="chart-lbl"><span>1st meetings</span><span>2nd meetings</span></div></div>
+        </div>
+        <p class="center" style="font-weight:700">Conversion rate up <span class="pink">21.9%</span> in one month</p>
+      </div>
+      <p class="note">* Data shared directly by the client company and their sales team — not our internal metrics.</p>
+    </div>
+
+    <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- GLIMPSES -->
+<section class="sec light" id="glimpses" style="border-top:1px solid var(--lb)">
+  <div class="wrap">
+    <h2 class="big">Glimpses of the Event</h2>
+    <div class="reels">
+      <div class="insta"><div class="hd"><img class="av" src="assets/dr-ameetparekh-instagram.jpg" alt="Dr. Ameet Parekh profile"><div class="handle"><small>@dr.ameetparekhcoach</small><span class="verified" aria-hidden="true">✓</span></div><a class="vp" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View Profile</a></div><div class="pic"><video class="event-video" preload="metadata" playsinline controls><source src="assets/event_video_01.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><button type="button" class="play" aria-label="Play event video 1"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><p class="video-error" role="status" hidden>Video unavailable. Please try again later.</p></div><div class="ft">28.6K views<a href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View more on Instagram</a></div><a class="watch" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
+      <div class="insta"><div class="hd"><img class="av" src="assets/dr-ameetparekh-instagram.jpg" alt="Dr. Ameet Parekh profile"><div class="handle"><small>@dr.ameetparekhcoach</small><span class="verified" aria-hidden="true">✓</span></div><a class="vp" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View Profile</a></div><div class="pic"><video class="event-video" preload="metadata" playsinline controls><source src="assets/event_video_02.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><button type="button" class="play" aria-label="Play event video 2"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><p class="video-error" role="status" hidden>Video unavailable. Please try again later.</p></div><div class="ft">24.3K views<a href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View more on Instagram</a></div><a class="watch" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
+      <div class="insta"><div class="hd"><img class="av" src="assets/dr-ameetparekh-instagram.jpg" alt="Dr. Ameet Parekh profile"><div class="handle"><small>@dr.ameetparekhcoach</small><span class="verified" aria-hidden="true">✓</span></div><a class="vp" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View Profile</a></div><div class="pic"><video class="event-video" preload="metadata" playsinline controls><source src="assets/event_video_03.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><button type="button" class="play" aria-label="Play event video 3"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><p class="video-error" role="status" hidden>Video unavailable. Please try again later.</p></div><div class="ft">21.8K views<a href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View more on Instagram</a></div><a class="watch" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  document.querySelectorAll('#glimpses .insta').forEach(function(card,index){
+    var video=card.querySelector('.event-video');
+    var playButton=card.querySelector('.play');
+    var errorMessage=card.querySelector('.video-error');
+    function showError(){errorMessage.hidden=false;playButton.hidden=false;}
+    playButton.addEventListener('click',function(){
+      errorMessage.hidden=true;
+      if(video.ended)video.currentTime=0;
+      var playback=video.play();
+      if(playback&&typeof playback.catch==='function')playback.catch(showError);
+    });
+    video.addEventListener('play',function(){
+      playButton.hidden=true;
+      playButton.setAttribute('aria-label','Play event video '+(index+1));
+    });
+    video.addEventListener('pause',function(){if(!video.ended)playButton.hidden=false;});
+    video.addEventListener('ended',function(){
+      playButton.hidden=false;
+      playButton.setAttribute('aria-label','Replay event video '+(index+1));
+    });
+    video.addEventListener('error',showError);
+  });
+})();
+</script>
+
+<!-- WORKED WITH -->
+<section class="sec light worked-with">
+  <div class="wrap" style="gap:48px">
+    <h2 class="pink" style="font-size:clamp(28px,4vw,36px);font-weight:700;text-align:center">Worked With</h2>
+    <div class="logos">
+      <div class="logo"><img src="assets/celebrity-gopal-das.jpg" alt="Gopal Das"></div>
+      <div class="logo"><img src="assets/celebrity-ness-wadia.jpg" alt="Ness Wadia"></div>
+      <div class="logo"><img src="assets/celebrity-sonu-sood.jpg" alt="Sonu Sood"></div>
+      <div class="logo"><img src="assets/celebrity-vineeta-singh.jpg" alt="Vineeta Singh"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAKING -->
+<section class="sec dark" style="padding:80px 16px">
+  <div class="wrap" style="gap:32px">
+    <div class="center" style="display:flex;flex-direction:column;gap:16px;align-items:center">
+      <h2 style="font-size:clamp(26px,4vw,36px);font-weight:700">Where Your Revenue Is Leaking</h2>
+      <p class="mut" style="max-width:768px;font-size:18px;line-height:28px">Most businesses lose money at every stage of their marketing &amp; sales pipeline — from poor landing pages to weak follow-ups. Here's why your take-home keeps shrinking.</p>
+    </div>
+    <div class="leakbox">
+      <div class="funnel">
+        <div><b>Ads</b><small>Wasted spend</small></div><span class="arrow">→</span>
+        <div><b>Landing Page</b><small>Low conversion</small></div><span class="arrow">→</span>
+        <div><b>Leads</b><small>Cold &amp; unreachable</small></div><span class="arrow">→</span>
+        <div><b>Follow-up</b><small>Weak / delayed</small></div><span class="arrow">→</span>
+        <div><b>Closing</b><small>Heavy discounts</small></div>
+      </div>
+    </div>
+    <p class="mut center" style="max-width:672px">The result? You spend lakhs on ads but take home only a fraction. It's time to fix the leaks.</p>
+  </div>
+</section>
+
+<!-- DIFFERENT -->
+<section class="sec dark" style="background:linear-gradient(rgba(18,18,18,.85),rgba(18,18,18,.85)),#0c0c0c;padding:80px 16px">
+  <div class="wrap" style="gap:32px">
+    <h2 style="font-size:clamp(26px,4vw,36px);font-weight:700;text-align:center">Why We're Different</h2>
+    <div class="diffgrid">
+      <div class="gc"><h4><span>❗</span> The Problem</h4>
+        <p class="mut">Most businesses are stuck in the Marketing vs Sales blame game.</p>
+        <div class="q">Marketing says: "Sales isn't closing."</div>
+        <div class="q">Sales says: "Leads are cold."</div>
+        <b>Meanwhile… the business owner suffers.</b></div>
+      <div class="gc g"><h4><span>✅</span> Our Solution</h4>
+        <b style="font-size:18px">We end this headache.</b>
+        <p class="mut">We take charge of both – generating quality leads and converting them.</p>
+        <b>We're not just mentors… we're implementers.</b></div>
+    </div>
+    <div class="three">
+      <div><b>One Team</b><span>Unified approach, no finger pointing</span></div>
+      <div><b>One Responsibility</b><span>We own the entire process</span></div>
+      <div><b>One Outcome</b><span>More revenue for you</span></div>
+    </div>
+    <div class="bar-pink">One team. One responsibility. One outcome – more revenue for you.</div>
+  </div>
+</section>
+
+<!-- CASE SNAPSHOT -->
+<section class="sec light">
+  <div class="wrap" style="gap:32px">
+    <h2 class="big">Case Snapshot</h2>
+    <div class="snap">
+      <div><small>Industry</small><b>Hospitality (Multi-Property Hotel Group)</b></div>
+      <div><small>Sales Team Size</small><b>20 members</b></div>
+      <div><small>Engagement</small><b>Sales Audit + System Implementation</b></div>
+      <div><small>Duration</small><b>11 months</b></div>
+      <div><small>Core Issue</small><b>No visibility, no verification, no control</b></div>
+    </div>
+    <div class="ba">
+      <div class="bacard"><h4>The Reality Before</h4><ul><li>Sales reports couldn't be trusted</li><li>Leadership had zero clarity on deal quality</li><li>Performance depended on individual intent, not systems</li></ul></div>
+      <div class="bacard ok"><h4>The Outcome After</h4><ul><li>End-to-end pipeline visibility</li><li>Verifiable sales activity</li><li>Sales became system-driven, not people-dependent</li></ul></div>
+    </div>
+    <a href="#" class="rlink">Read the full breakdown → How we fixed invisible sales leakages inside a 20-member sales team</a>
+  </div>
+</section>
+
+<!-- PARTICIPANT FEEDBACK -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="center"><h2 class="big">Participants' Feedback</h2><h3 class="sub">From Business Owners</h3></div>
+    <div class="reels" style="gap:24px">
+      <div class="reel" style="max-width:232px;aspect-ratio:228/405"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button></div>
+      <div class="reel" style="max-width:232px;aspect-ratio:228/405"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button></div>
+      <div class="reel" style="max-width:232px;aspect-ratio:228/405"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button></div>
+      <div class="reel" style="max-width:232px;aspect-ratio:228/405"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button></div>
+    </div>
+    <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- BUSINESS TYPE TABS -->
+<section class="sec dark">
+  <div class="wrap">
+    <div class="center" style="display:flex;flex-direction:column;gap:8px;align-items:center">
+      <h3 class="mut" style="font-size:20px;font-weight:400">Choose your business type to see how</h3>
+      <h2 class="big">Business Scale-Up Blueprint helps you</h2>
+      <p class="mut" style="max-width:672px;padding-top:8px">Customized strategies and automation to overcome your specific challenges and scale profitably</p>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-t="b2b"><span>🏢</span><div><b>B2B</b><small>Business to Business</small></div><span class="sel">SELECTED</span></button>
+      <button class="tab" data-t="b2d"><span>🚚</span><div><b>B2D</b><small>Business to Dealer/Distributor</small></div><span class="sel">SELECTED</span></button>
+      <button class="tab" data-t="b2c"><span>🛍️</span><div><b>B2C</b><small>Business to Customer</small></div><span class="sel">SELECTED</span></button>
+    </div>
+    <div class="twocol" id="tabpanel"></div>
+    <div class="cta-block"><h4 style="font-size:20px">Ready to Transform Your Business?</h4><p class="mut">Let us show you how Business Scale-Up Blueprint can solve your specific challenges and accelerate your growth.</p><a href="#reserve" class="btn">Get Started Today</a></div>
+  </div>
+</section>
+
+<!-- ONE DAY -->
+<section class="sec light">
+  <div class="wrap">
+    <div class="photos"><div class="ph">Event photo 1</div><div class="ph">Event photo 2</div></div>
+    <div class="oneday">
+      <div class="ph" style="aspect-ratio:496/331">Workshop photo</div>
+      <div>
+        <h3>One Day. All In.</h3>
+        <p class="s"><b>In Business Scale-Up Blueprint, we don't hold anything back.</b></p>
+        <p>Every strategy, every answer, every framework is shared with you in this one day itself.</p>
+        <p>Got questions? You'll get clear, practical answers right there.</p>
+        <p class="pink" style="font-style:italic;font-weight:700">No hidden courses, no "later modules."</p>
+        <p class="s"><b>Yes, we do have a 3-month Implementation Program, but that's about applying what you learn.</b> We only share details about it at the end of this one-day workshop.</p>
+        <p class="s"><b>This means: when you walk out of Business Scale-Up Blueprint, you walk out with complete clarity.</b></p>
+        <p>And then you have two choices: implement the learnings with me and my team through hand-holding, or take the tools and do it yourself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR YOU IF -->
+<section class="sec dark">
+  <div class="wrap">
+    <h3 class="mid">This event is for you if</h3>
+    <div class="pills">
+      <div class="pill">You don't have a steady flow of new leads - and it's forcing you to compromise on prices and dignity.</div>
+      <div class="pill">You've hired salespeople - but they sit idle, miss targets, and drain salaries without results.</div>
+      <div class="pill">You're losing margins to agents, platforms, or middlemen - and feel powerless to change it.</div>
+      <div class="pill">Your cash flow feels like a gamble every month - no predictability, just constant pressure.</div>
+      <div class="pill">Your marketing team floods you with reports - but real results? Still missing.</div>
+      <div class="pill">You pour money into ads - but get confusion instead of customers.</div>
+      <div class="pill">You've been blackmailed by your own team - and felt stuck because there's no system to rely on.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK STATS -->
+<section class="sec light" style="padding:80px 16px">
+  <div class="wrap" style="gap:64px">
+    <div class="center"><h2 class="big">Miss this, and you miss the network.</h2><p class="grey" style="font-size:20px;margin-top:16px">Connect with top-tier business owners in one powerful day.</p></div>
+    <div class="stats">
+      <div class="stat"><b>15+</b><span>Years Experience</span></div>
+      <div class="stat"><b>804+</b><span>Online / Offline Events</span></div>
+      <div class="stat"><b>300+</b><span>Happy Clients</span></div>
+      <div class="stat"><b>20+</b><span>Success Stories</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REAL BUSINESS OWNERS -->
+<section class="sec light" style="padding:80px 16px">
+  <div class="wrap" style="gap:64px">
+    <div class="center"><h2 class="big">Real Business Owners</h2><h3 class="sub">Real Results!</h3></div>
+    <div class="grid3">
+      <div class="sc"><div><span>Cash Flow Master</span><h4>CA Jagmohan Singh</h4><p>CAC Reduce By 50% In 1 Month</p></div></div>
+      <div class="sc"><div><span>Yoga coach</span><h4>Sayali Vaidya</h4><p>45 lakhs Per Month</p></div></div>
+      <div class="sc"><div><span>Printing Press Owner</span><h4>Vicky</h4><p>50% Jump in Sales In 3 Months</p></div></div>
+      <div class="sc"><div><span>Ayurvedic Doctor</span><h4>Dr. Renuka Siddhapura</h4><p>20L Per Month</p></div></div>
+      <div class="sc"><div><span>Visa Consultants</span><h4>Divyesh Kathrotiya</h4><p>12L Per Month</p></div></div>
+      <div class="sc"><div><span>Derma Manufacturer</span><h4>Varun Jaidka</h4><p>0 to 30L/month in 7 months!</p></div></div>
+    </div>
+    <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- BONUS -->
+<section class="sec dark2">
+  <div class="wrap">
+    <div class="center"><h3 class="mut" style="font-size:20px;font-weight:400">AI-Powered</h3><h2 class="big">Mega Bonuses</h2></div>
+    <div class="bonus">
+      <div class="img"><img src="assets/ai-laptop-bonus.png" alt="AI-powered laptop bonus"></div>
+      <div><h4>Key Features:</h4>
+        <ul>
+          <li>Industry-specific script generation (e.g., manufacturing, services, retail, etc.)</li>
+          <li>Covers entire sales journey — from opening to objection handling to closing</li>
+          <li>Designed for both founders and team members with or without sales training</li>
+          <li>Easy to use, generates scripts instantly based on your inputs</li>
+          <li>Helps improve consistency, clarity, and conversion rates across your team</li>
+        </ul></div>
+    </div>
+    <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- NO-BRAINER -->
+<section class="sec light" style="padding:80px 16px">
+  <div class="wrap" style="gap:64px">
+    <h2 class="big">What Makes This a No-Brainer</h2>
+    <div style="width:100%;max-width:1152px">
+      <div class="nb">
+        <div class="ph" style="aspect-ratio:552/371">Personalized mentorship photo</div>
+        <div>
+          <div class="hd"><div class="ico2">👥</div><h3>Personalized Attention &amp; Hands-On Mentorship</h3></div>
+          <p>We don't just teach—you get personalized attention to ensure you execute and implement everything correctly and effectively.</p>
+          <p>Every participant receives direct guidance, feedback, and support to make sure they leave with a fully functional coaching business plan.</p>
+          <p class="k">No one is left behind— this is a game-changer for those who value hands-on mentorship and accountability!</p>
+        </div>
+      </div>
+      <div class="nb rev" style="margin-top:80px">
+        <div>
+          <div class="hd"><div class="ico2">💬</div><h3>Direct Access &amp; Expert Insights On Demand</h3></div>
+          <p>Your success matters, and that's why you get direct access to the coach for any questions, doubts, or clarifications.</p>
+          <p>Whether it's about your <b>marketing strategy, sales funnel, or curriculum design</b>, you'll have the opportunity to get expert insights <b>on demand.</b></p>
+          <p class="k">This level of access is a game-changer for those who need extra guidance to move forward confidently!</p>
+        </div>
+        <div class="ph" style="aspect-ratio:552/371">Expert access photo</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOST -->
+<section class="sec dark2" style="padding:80px 16px">
+  <div class="host">
+    <div class="pic"><img src="assets/dr-ameet-parekh.png" alt="Dr. Ameet Parekh"></div>
+    <div>
+      <small>Meet your coach</small>
+      <h2>DR. AMEET PAREKH</h2>
+      <p><b>Creator of the Business Scale-Up Blueprint System</b></p>
+      <p>For over 15 years, Dr. Ameet Parekh has worked with business owners across manufacturing, distribution, retail, services, and professional practices to help them overcome growth challenges and build stronger businesses.</p>
+      <p>He has trained <b>2,00,000+ business owners</b> and is recognised for his work in business coaching, leadership, sales, team development, and operational systems.</p>
+      <p>His recognitions include the <b>ET Business Icon Award (2020)</b>, the <b>Global Excellence Award (2022)</b>, and the <b>Times Power Award (2019)</b>.</p>
+      <p>Through the Business Scale-Up Blueprint System, his focus is on helping owners step out of daily firefighting, build systems that run without them, and create a foundation for sustainable growth.</p>
+      <div class="hstats">
+        <div><b>15+</b><span>Years Experience</span></div>
+        <div><b>2L+</b><span>Business Owners Trained</span></div>
+        <div><b>3</b><span>Key Industry Awards</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOULD ATTEND -->
+<section class="sec dark" style="padding:80px 16px">
+  <div class="wrap" style="gap:64px">
+    <h2 class="big">Who Should Attend The Event</h2>
+    <div class="who">
+      <div><div class="ph">Photo</div>Manufacturer</div>
+      <div><div class="ph">Photo</div>Service Business</div>
+      <div><div class="ph">Photo</div>High Ticket / Real Estate</div>
+      <div><div class="ph">Photo</div>Retail or Ecom</div>
+      <div><div class="ph">Photo</div>Distribution</div>
+      <div><div class="ph">Photo</div>B2B</div>
+    </div>
+    <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- LEARN MORE -->
+<section class="sec light">
+  <div class="wrap">
+    <h3 class="mid">Learn More Here</h3>
+    <div class="reels">
+      <div class="reel-col"><div class="reel" style="background:#121212"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 720K Views</span></div><p class="reel-cap">My proven strategies to get high quality leads</p></div>
+      <div class="reel-col"><div class="reel" style="background:#121212"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 2.1M Views</span></div><p class="reel-cap">Client attraction strategies 2025</p></div>
+      <div class="reel-col"><div class="reel" style="background:#121212"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 1.9M Views</span></div><p class="reel-cap">Creating a high-ticket offer like a pro</p></div>
+    </div>
+    <div class="cta-block"><span class="l1">₹1 Cr+ in revenue?</span><span class="l2">It's time to think bigger.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- HARSH TRUTHS -->
+<section class="sec light">
+  <div class="wrap">
+    <h3 class="mid">Few harsh truths if you stay stuck where you are...</h3>
+    <div class="pills l">
+      <div class="pill">Old clients exploit you</div>
+      <div class="pill">Wrong clients drain your time, energy, and passion</div>
+      <div class="pill">No fresh leads?</div>
+      <div class="pill">Cash flow becomes a monthly panic attack</div>
+      <div class="pill">You become a vendor, not a brand</div>
+      <div class="pill">Your business loses all value</div>
+      <div class="pill">Your best employees lose hope</div>
+      <div class="pill">You become invisible</div>
+    </div>
+    <div class="cta-block"><b style="font-size:20px">One seat, one step — the end of chaos begins here.</b><p class="grey">Book your seat — and start building the business you deserve.</p><div style="padding-top:24px" class="cta-block"><span class="l1">₹1 Cr+ in revenue?</span><span class="l2">It's time to think bigger.</span></div><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="sec dark" style="padding:80px 16px;background:linear-gradient(180deg,rgba(147,51,234,.05),rgba(147,51,234,0) 50%,rgba(147,51,234,.05)),#121212">
+  <div class="wrap" style="gap:0">
+    <div class="gbox">
+      <div class="g1">
+        <div class="seal">100%<br>MONEY<br>BACK</div>
+        <h3 style="font-size:clamp(24px,4vw,30px);line-height:1.2">100% Clarity Guarantee</h3>
+        <h2 style="font-size:clamp(20px,3.5vw,24px);line-height:32px;max-width:672px">If You Don't Leave With Clarity and a Clear Action Plan, I'll Return 100% <span class="pink">of Your Money. Promise!</span></h2>
+      </div>
+      <div class="g2">
+        <h3 style="font-size:clamp(22px,4vw,30px);line-height:1.2">No Worries — Connect With Dr. Ameet Parekh's Team First.</h3>
+        <p>See how Business Scale-Up Blueprint can help you scale your business — then decide.</p>
+        <a href="#" class="btn">Book a Call With Dr. Ameet’s Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section class="sec light">
+  <div class="wrap" style="gap:8px">
+    <div class="narrow center">
+      <h3 class="mid">Here's What You'll Get</h3>
+      <p class="grey" style="padding-top:8px">If you're a business owner earning ₹1 Cr+ and want to finally understand what's actually working in your marketing and sales...</p>
+    </div>
+    <div class="pills l chk" style="padding-top:24px">
+      <div class="pill">Learn how to grow profits with clarity</div>
+      <div class="pill">Build marketing and sales systems that actually work</div>
+      <div class="pill">Stop guessing, start scaling — without confusion</div>
+    </div>
+    <div class="cta-block" style="padding-top:24px"><span class="l1">₹1 Cr+ in revenue?</span><span class="l2">It's time to think bigger.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec light" style="padding:80px 16px">
+  <div class="wrap" style="gap:64px">
+    <h2 class="big">Frequently Asked Questions</h2>
+    <div class="faq" id="faq">
+      <div class="fq"><button>What are the charges for this session?</button><div class="a"><p>One seat is ₹1,499 — and there are only 100 seats. Why ₹1,499? We want 100 owners who are serious about fixing their business, not a crowd.</p></div></div>
+      <div class="fq"><button>Is this online or in person?</button><div class="a"><p>Fully in person, at the Novotel, Mumbai International Airport, Mumbai, on one date — 22nd November 2026. The session starts at 10 AM with a 5-Star Breakfast Meet &amp; Greet, followed by the main diagnostic, and ends at 1:00 PM. It’s not a webinar, and there’s no recording sold afterward.</p></div></div>
+      <div class="fq"><button>Who is this session for?</button><div class="a"><p>Owner-run businesses of any nature or industry looking to scale and grow fast — especially owners whose team doesn’t take ownership, who are involved in every decision, or who face weak lead conversion, late payments or shrinking profits.</p></div></div>
+      <div class="fq"><button>What exactly do I get?</button><div class="a"><p>One Sunday morning in the room, live and practical — covering sales, team, money, systems and marketing — plus direct access to the team to ask your own questions, and your written, ranked list of what to fix first to take home. Bring your last three months’ sales and collection figures.</p></div></div>
+      <div class="fq"><button>What is the Clear List Guarantee?</button><div class="a"><p>Leave without your written list of what to fix first, and get your full ₹1,499 back the same day.</p></div></div>
+      <div class="fq"><button>Who’s actually running this?</button><div class="a"><p>Dr. Ameet Parekh runs the session, in person. The system behind it is the Business Scale-Up Blueprint — the same one used to train 2,00,000+ business owners across 5+ countries.</p></div></div>
+      <div class="fq"><button>Is this just a motivational talk?</button><div class="a"><p>No. Everything in this session comes from what real business owners told us was actually broken — not generic advice — backed by verified video case studies from the Centre of Business Excellence library.</p></div></div>
+      <div class="fq"><button>What if I can’t make this date?</button><div class="a"><p>Right now, only one Mumbai date is planned. There’s no confirmed repeat date yet. Can’t make it? You can transfer your seat up to 48 hours before the event.</p></div></div>
+    </div>
+    <div class="cta-block"><span class="l1">₹1 Cr+ in revenue?</span><span class="l2">It's time to think bigger.</span><a href="#reserve" class="btn">Let's Start</a></div>
+  </div>
+</section>
+
+
+<!-- Registration pop-up -->
+<div class="registration-modal" id="registrationModal" hidden>
+  <section class="registration-dialog" role="dialog" aria-modal="true" aria-labelledby="registrationTitle" aria-describedby="registrationIntro">
+    <button type="button" class="registration-close" id="registrationClose" aria-label="Close registration form">&times;</button>
+    <div class="registration-kicker" id="registrationKicker">Business Scale-Up Blueprint</div>
+    <h2 id="registrationTitle">Reserve Your Seat</h2>
+    <p class="registration-intro" id="registrationIntro">Tell us a little about your business. Let’s map your next stage of growth.</p>
+    <div class="registration-progress" id="registrationProgress" aria-hidden="true"><span class="active"></span><span></span></div>
+
+    <form id="registrationForm">
+      <div id="registrationStepOne">
+        <div class="registration-fields">
+          <label>Full Name
+            <input type="text" name="fullName" autocomplete="name" placeholder="Enter your full name" required>
+          </label>
+          <label>Phone Number
+            <input type="tel" name="phone" autocomplete="tel" inputmode="tel" pattern="[0-9+\-\s()]{7,20}" placeholder="Enter your phone number" required>
+          </label>
+          <label>Email Address
+            <input type="email" name="email" autocomplete="email" placeholder="Enter your email address" required>
+          </label>
+          <label>Industry
+            <select name="industry" required>
+              <option value="">Select your industry</option>
+              <option>Manufacturing</option><option>Distribution / Dealer</option>
+              <option>Retail / E-commerce</option><option>Professional Services</option>
+              <option>Real Estate</option><option>Hospitality</option>
+              <option>Healthcare</option><option>Education / Coaching</option>
+              <option>Other</option>
+            </select>
+          </label>
+        </div>
+        <p class="registration-error" id="registrationError" role="alert"></p>
+        <div class="registration-actions"><button class="btn block" id="choosePassButton" type="button">I Want to Scale My Business&nbsp; →</button></div>
+      </div>
+
+      <div id="registrationStepTwo" hidden>
+        <div class="registration-passes" role="group" aria-label="Choose a pass">
+          <button type="button" class="registration-pass" data-pass="Solo Pass" data-price="1499" aria-pressed="false">
+            <span class="pass-name">Solo Pass</span><span class="pass-price">₹1,499</span><small>Entry for 1 attendee</small><span class="pass-check"></span>
+          </button>
+          <button type="button" class="registration-pass" data-pass="Partner Pass" data-price="1999" aria-pressed="false">
+            <span class="pass-name">Partner Pass</span><span class="pass-price">₹1,999</span><small>Entry for 2 attendees</small><span class="pass-check"></span>
+          </button>
+        </div>
+        <div class="registration-benefits">
+          <h3>Benefits You’ll Get from the Business Scale-Up Blueprint</h3>
+          <ul>
+            <li>One-on-one expert guidance tailored to your business.</li>
+            <li>Practical strategies you can put into action—not just theory.</li>
+            <li>Coach-led follow-through to help you execute, solve roadblocks, and work toward measurable results.</li>
+          </ul>
+        </div>
+        <p class="registration-error" id="passError" role="alert"></p>
+        <div class="registration-actions">
+          <button type="button" class="registration-back" id="registrationBack">← Back</button>
+          <button type="button" class="btn block" id="registrationConfirm">Book My Slot&nbsp; →</button>
+        </div>
+      </div>
+    </form>
+
+    <div id="registrationStepThree" hidden>
+      <div class="registration-confirmation">
+        <div class="registration-success-icon" aria-hidden="true">✓</div>
+        <h2>Application Submitted Successfully!</h2>
+        <p>Thank you for taking the next step toward scaling your business. Our team will contact you to discuss the next steps.</p>
+        <div class="registration-summary" id="registrationSummary"></div>
+        <button type="button" class="btn block" id="registrationDone">Done</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>© 2026 Business Scale-Up Blueprint. All rights reserved.</footer>
+
+<script>
+// Countdown to 22 Nov 2026, 10:00 AM IST
+(function(){
+  var target=new Date('2026-11-22T10:00:00+05:30').getTime();
+  var d=document.getElementById('cd'),h=document.getElementById('ch'),m=document.getElementById('cm'),s=document.getElementById('cs');
+  function p(n){return String(n).padStart(2,'0')}
+  function tick(){
+    var diff=Math.max(0,target-Date.now());
+    d.textContent=p(Math.floor(diff/864e5));
+    h.textContent=p(Math.floor(diff%864e5/36e5));
+    m.textContent=p(Math.floor(diff%36e5/6e4));
+    s.textContent=p(Math.floor(diff%6e4/1e3));
+  }
+  tick();setInterval(tick,1000);
+})();
+
+// Business-type tabs
+(function(){
+  var data={
+    b2b:{c:["Long sales cycles — follow-ups drag for weeks or months.","Clients demand heavy discounts before signing contracts.","Marketing generates leads, but decision-makers are unreachable.","Heavy dependence on founder for negotiation and closure.","Team doesn't understand how to convert corporate buyers logically."],
+         s:["Build a predictable sales pipeline with CRM-driven follow-ups.","Train your team to close corporate clients faster using psychology-based scripts.","Reduce founder dependency by systemizing proposals, demos, and follow-ups.","Implement tracking dashboards for B2B deal progress and conversions.","Align marketing and sales departments with unified KPIs."]},
+    b2d:{c:[
+      "Dealers struggle to achieve consistent monthly sales targets.",
+      "Distributors demand higher margins, discounts, and credit periods.",
+      "New dealer acquisition is slow, limiting market expansion.",
+      "Poor distributor follow-ups lead to inactive dealers and lost orders.",
+      "Lack of sales tracking makes it difficult to identify underperforming territories."
+    ],s:[
+      "Create clear dealer-wise sales targets and performance tracking systems.",
+      "Build a profitable pricing and incentive structure without excessive discounting.",
+      "Develop a repeatable dealer acquisition process to expand into new territories.",
+      "Set up structured follow-ups to reactivate dealers and increase repeat orders.",
+      "Use territory-wise dashboards to identify gaps and improve distributor performance."
+    ]},
+    b2c:{c:[
+      "High customer acquisition costs reduce overall profitability.",
+      "Many enquiries and website visitors fail to convert into paying customers.",
+      "Customers compare prices and choose competitors offering better deals.",
+      "Low repeat purchases make revenue unpredictable.",
+      "Poor customer follow-ups result in abandoned carts and lost sales."
+    ],s:[
+      "Improve marketing efficiency by targeting high-intent customers and tracking acquisition costs.",
+      "Optimize the customer journey, landing pages, and sales process to increase conversions.",
+      "Strengthen brand positioning to communicate value beyond price discounts.",
+      "Build retention campaigns and loyalty strategies to encourage repeat purchases.",
+      "Automate follow-ups through email, WhatsApp, and CRM-based customer journeys."
+    ]}
+  };
+  var panel=document.getElementById('tabpanel');
+  function li(a){return a.map(function(x){return '<li>'+x+'</li>'}).join('')}
+  function render(k){
+    panel.innerHTML='<div class="panel"><h4><span style="color:#F59F0A">⚠</span> Challenges</h4><ul>'+li(data[k].c)+'</ul></div>'+
+    '<div class="panel hl"><h4><span style="color:#27B07D">✓</span> How Business Scale-Up Blueprint Helps</h4><ul>'+li(data[k].s)+'</ul></div>';
+  }
+  render('b2b');
+  document.querySelectorAll('#tabs .tab').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('#tabs .tab').forEach(function(x){x.classList.remove('active')});
+      t.classList.add('active');render(t.dataset.t);
+    });
+  });
+})();
+
+// FAQ accordion
+document.querySelectorAll('#faq .fq button').forEach(function(b){
+  b.addEventListener('click',function(){b.parentElement.classList.toggle('open')});
+});
+
+// Registration pop-up and lead capture. Add your deployed Google Apps Script Web App URL below.
+(function(){
+  var modal=document.getElementById('registrationModal');
+  if(!modal) return;
+  var form=document.getElementById('registrationForm');
+  var stepOne=document.getElementById('registrationStepOne');
+  var stepTwo=document.getElementById('registrationStepTwo');
+  var stepThree=document.getElementById('registrationStepThree');
+  var title=document.getElementById('registrationTitle');
+  var intro=document.getElementById('registrationIntro');
+  var kicker=document.getElementById('registrationKicker');
+  var progress=document.getElementById('registrationProgress');
+  var closeBtn=document.getElementById('registrationClose');
+  var selectedPass=null;
+  var autoOpened=false;
+  var SHEETS_WEB_APP_URL='https://script.google.com/macros/s/AKfycbwNBN5X4DzB61HZfXrMzlF8xDKlUAUmvdlV-5ltLLbdpnhzYmeHVX-b5tJ3jgQHHeemGw/exec';
+  var lastFocus=null;
+
+  function showStep(n){
+    stepOne.hidden=n!==1; stepTwo.hidden=n!==2; stepThree.hidden=n!==3;
+    progress.hidden=n===3;
+    progress.querySelectorAll('span').forEach(function(el,i){el.classList.toggle('active',i<n)});
+    if(n===1){title.textContent='Let’s Scale Your Business';intro.textContent='Tell us a little about your business. Let’s map your next stage of growth.';kicker.textContent='Business Scale-Up Blueprint';}
+    if(n===2){title.textContent='Choose Your Pass';intro.textContent='Choose how you’d like to attend. Every pass includes the same implementation support.';kicker.textContent='Step 2 of 2';}
+    if(n===3){title.textContent='Application Submitted';intro.textContent='';kicker.textContent='You’re on your way';}
+  }
+  function openModal(){
+    lastFocus=document.activeElement;
+    selectedPass=null;
+    modal.querySelectorAll('.registration-pass').forEach(function(card){card.classList.remove('selected');card.setAttribute('aria-pressed','false');card.querySelector('.pass-check').textContent='';});
+    document.getElementById('passError').textContent='';
+    document.getElementById('registrationError').textContent='';
+    modal.hidden=false; document.body.classList.add('modal-open');
+    showStep(1);
+    window.setTimeout(function(){var first=form.querySelector('[name="fullName"]');if(first)first.focus();},50);
+  }
+  function closeModal(){
+    modal.hidden=true;document.body.classList.remove('modal-open');
+    if(lastFocus && typeof lastFocus.focus==='function')lastFocus.focus();
+  }
+  document.querySelectorAll('a.btn').forEach(function(link){
+    link.addEventListener('click',function(event){event.preventDefault();openModal();});
+  });
+  closeBtn.addEventListener('click',closeModal);
+  document.getElementById('registrationDone').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(event){if(event.target===modal)closeModal();});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!modal.hidden)closeModal();});
+
+  // Let visitors view the pass options first; validate their details before confirmation.
+  document.getElementById('choosePassButton').addEventListener('click',function(){
+    document.getElementById('registrationError').textContent='';
+    showStep(2);
+  });
+  form.addEventListener('submit',function(event){event.preventDefault();});
+  document.getElementById('registrationBack').addEventListener('click',function(){document.getElementById('passError').textContent='';showStep(1);});
+  modal.querySelectorAll('.registration-pass').forEach(function(card){
+    card.addEventListener('click',function(){
+      selectedPass={name:card.dataset.pass,price:card.dataset.price};
+      modal.querySelectorAll('.registration-pass').forEach(function(other){
+        var active=other===card;
+        other.classList.toggle('selected',active);
+        other.setAttribute('aria-pressed',active?'true':'false');
+        other.querySelector('.pass-check').textContent=active?'✓ SELECTED':'';
+      });
+      document.getElementById('passError').textContent='';
+    });
+  });
+  document.getElementById('registrationConfirm').addEventListener('click',function(){
+    if(!selectedPass){document.getElementById('passError').textContent='Please select a pass to continue.';return;}
+    var requiredFields=form.querySelectorAll('#registrationStepOne input[required], #registrationStepOne select[required]');
+    for(var i=0;i<requiredFields.length;i++){
+      if(!requiredFields[i].checkValidity()){
+        showStep(1);
+        requiredFields[i].focus();
+        requiredFields[i].reportValidity();
+        document.getElementById('registrationError').textContent='Please complete all required details before continuing.';
+        return;
+      }
+    }
+    var fd=new FormData(form);
+    if(!SHEETS_WEB_APP_URL || SHEETS_WEB_APP_URL.indexOf('PASTE_YOUR_')===0){
+      document.getElementById('passError').textContent='Registration is not connected yet. Please contact the website administrator.';
+      return;
+    }
+    var submitBtn=document.getElementById('registrationConfirm');
+    submitBtn.disabled=true; submitBtn.textContent='Submitting…';
+    var payload={fullName:fd.get('fullName'),phone:fd.get('phone'),email:fd.get('email'),industry:fd.get('industry'),pass:selectedPass.name,price:selectedPass.price,source:'Business Scale-Up Blueprint landing page',submittedAt:new Date().toISOString()};
+    fetch(SHEETS_WEB_APP_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)})
+      .then(function(){
+        document.getElementById('registrationSummary').innerHTML=
+          '<div><b>Name:</b> '+escapeHtml(payload.fullName)+'</div>'+
+          '<div><b>Phone:</b> '+escapeHtml(payload.phone)+'</div>'+
+          '<div><b>Email:</b> '+escapeHtml(payload.email)+'</div>'+
+          '<div><b>Industry:</b> '+escapeHtml(payload.industry)+'</div>'+
+          '<div><b>Pass:</b> '+escapeHtml(payload.pass)+'</div>'+
+          '<div><b>Price:</b> ₹'+Number(payload.price).toLocaleString('en-IN')+'</div>';
+        showStep(3); launchConfetti();
+      })
+      .catch(function(){document.getElementById('passError').textContent='We couldn’t submit your details. Please try again.';})
+      .finally(function(){submitBtn.disabled=false;submitBtn.textContent='Book My Slot →';});
+  });
+  function launchConfetti(){
+    var chars=['#9333EA','#FFFFFF','#C084FC','#FFD166','#7EE7C1'];
+    for(var i=0;i<85;i++){var piece=document.createElement('span');piece.className='confetti-piece';piece.style.left=(Math.random()*100)+'vw';piece.style.background=chars[Math.floor(Math.random()*chars.length)];piece.style.setProperty('--drift',((Math.random()-.5)*240)+'px');piece.style.animationDelay=(Math.random()*.65)+'s';piece.style.borderRadius=Math.random()>.5?'50%':'2px';document.body.appendChild(piece);setTimeout((function(el){return function(){el.remove();};})(piece),3800);}
+  }
+  function escapeHtml(value){
+    return String(value==null?'':value).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});
+  }
+  window.addEventListener('scroll',function(){
+    if(autoOpened||!modal.hidden)return;
+    var doc=document.documentElement;
+    var maxScroll=doc.scrollHeight-window.innerHeight;
+    if(maxScroll>100 && window.scrollY/maxScroll>=0.9){autoOpened=true;openModal();}
+  },{passive:true});
+})();
+
+</script>
+</body>
+</html>
