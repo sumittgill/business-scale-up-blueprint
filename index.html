@@ -88,6 +88,10 @@ hr{border:0;border-top:1px solid var(--border)}
 .reel-cap{text-align:center;font-weight:700;margin-top:16px;max-width:320px}
 .reel-col{display:flex;flex-direction:column;align-items:center;flex:1;min-width:240px;max-width:320px}
 .reel-col .reel{width:100%;flex:none}
+#learn-more .learn-video{position:absolute;inset:0;z-index:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+#learn-more .learn-play{position:absolute;z-index:2}
+#learn-more .learn-play[hidden]{display:none}
+#learn-more .views{z-index:3}
 /* proof */
 .badge{background:rgba(147,51,234,.1);color:var(--purple);font-weight:700;font-size:12px;letter-spacing:.6px;text-transform:uppercase;padding:6px 12px;border-radius:9999px}
 .chartbox{width:100%;max-width:896px;background:#fff;border:2px solid rgba(147,51,234,.3);border-radius:16px;padding:32px 16px 16px;box-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1)}
@@ -118,6 +122,44 @@ hr{border:0;border-top:1px solid var(--border)}
 .insta .ft a{display:block;color:#9333EA;margin-top:6px;text-decoration:none}
 .watch{display:block;text-align:center;padding:12px;color:var(--grey);font-size:14px;text-decoration:none}
 @media(max-width:360px){.insta .hd{flex-wrap:wrap}.insta .handle{flex:0 1 auto}}
+/* event story */
+#glimpses .event-section{gap:40px}
+#glimpses .event-intro{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;width:100%}
+#glimpses .event-intro .badge{background:rgba(147,51,234,.1);border:1px solid rgba(147,51,234,.18)}
+#glimpses .event-intro h2{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,24px);width:100%;line-height:1.08}
+#glimpses .event-intro h2::before,#glimpses .event-intro h2::after{content:"";height:1px;flex:1;max-width:112px;background:linear-gradient(90deg,transparent,rgba(147,51,234,.48))}
+#glimpses .event-intro h2::after{transform:rotate(180deg)}
+#glimpses .event-intro h2 span,#glimpses .event-story h3 span{color:var(--purple)}
+#glimpses .event-intro p{color:var(--grey);font-size:clamp(15px,2vw,18px);line-height:1.6}
+#glimpses .event-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;width:100%;max-width:1200px}
+#glimpses .event-gallery-card{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid rgba(147,51,234,.32);border-radius:20px;background:var(--lt);box-shadow:0 14px 32px rgba(80,35,120,.12);transition:transform .25s ease,box-shadow .25s ease}
+#glimpses .event-gallery-card img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 48%;transition:transform .35s ease}
+#glimpses .event-gallery-card:nth-child(2) img{object-position:center 38%}
+#glimpses .event-gallery-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(75,35,110,.18)}
+#glimpses .event-gallery-card:hover img{transform:scale(1.025)}
+#glimpses .event-story{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:clamp(40px,5vw,64px);width:100%;max-width:1200px;margin-top:4px}
+#glimpses .event-feature{position:relative;isolation:isolate;border:1px solid rgba(147,51,234,.35);border-radius:24px;padding:7px;background:#fff;box-shadow:0 20px 48px rgba(80,35,120,.16)}
+#glimpses .event-feature::before{content:"";position:absolute;z-index:-1;inset:18px -12px -12px 18px;border-radius:26px;background:linear-gradient(135deg,#9333EA,#C084FC)}
+#glimpses .event-feature img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;border-radius:17px}
+#glimpses .event-story h3{margin:0 0 18px;color:var(--ink);font-size:clamp(32px,4vw,46px);font-weight:900;line-height:1.08;letter-spacing:-.8px}
+#glimpses .event-story p{margin:0 0 16px;color:var(--grey);font-size:15px;line-height:1.7}
+#glimpses .event-story p b{color:var(--ink)}
+#glimpses .event-story p:last-child{margin-bottom:0}
+#glimpses .event-lead{color:var(--ink);font-weight:700}
+#glimpses .event-points{position:relative;display:flex;flex-direction:column;gap:16px;margin:0 0 18px}
+#glimpses .event-points::before{content:"";position:absolute;left:19px;top:20px;bottom:20px;width:1px;background:rgba(147,51,234,.3)}
+#glimpses .event-point{position:relative;display:grid;grid-template-columns:40px minmax(0,1fr);align-items:start;gap:14px}
+#glimpses .event-point p{margin:5px 0 0}
+#glimpses .event-icon{position:relative;z-index:1;display:flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid rgba(147,51,234,.14);border-radius:12px;background:#F3E8FF;color:var(--purple)}
+#glimpses .event-icon svg,#glimpses .implementation-icon svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#glimpses .event-point .pink{font-style:italic;font-weight:700}
+#glimpses .implementation-callout{display:grid;grid-template-columns:44px minmax(0,1fr);align-items:center;gap:16px;margin:0 0 18px;padding:18px 16px;border:1px solid rgba(147,51,234,.16);border-radius:16px;background:rgba(147,51,234,.07)}
+#glimpses .implementation-icon{display:flex;min-height:44px;align-items:center;justify-content:center;border-right:1px solid rgba(147,51,234,.28);color:var(--purple)}
+#glimpses .implementation-callout p{margin:0;color:var(--ink)}
+#glimpses .implementation-callout p b{color:var(--ink)}
+@media(max-width:860px){#glimpses .event-gallery{gap:14px}#glimpses .event-story{grid-template-columns:1fr;gap:36px}#glimpses .event-feature{width:min(100%,680px);margin:0 auto}#glimpses .event-copy{width:100%;max-width:760px;margin:0 auto}}
+@media(max-width:640px){#glimpses .event-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+@media(max-width:520px){#glimpses .event-gallery{grid-template-columns:1fr;gap:18px}#glimpses .event-section{gap:34px}#glimpses .event-story{gap:30px}#glimpses .event-feature{margin-right:8px}#glimpses .event-point{gap:12px}#glimpses .implementation-callout{grid-template-columns:38px minmax(0,1fr);gap:12px;padding:14px 12px}}
 /* logos */
 .logos{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;width:100%;max-width:1024px}
 .logo{width:176px;height:176px;border-radius:16px;border:1px dashed var(--lb);background:var(--lt);display:flex;align-items:center;justify-content:center;color:#aaa;font-size:12px;text-align:center;padding:12px}
@@ -193,9 +235,10 @@ hr{border:0;border-top:1px solid var(--border)}
 .stat span{font-size:14px;color:var(--grey)}
 /* success grid */
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1024px;width:100%}
-.sc{position:relative;height:320px;border-radius:16px;overflow:hidden;background:linear-gradient(160deg,#2c2c2c,#0e0e0e);box-shadow:0 20px 25px -5px rgba(0,0,0,.3);display:flex;align-items:flex-end}
-.sc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#121212 0,rgba(18,18,18,.6) 50%,rgba(18,18,18,0))}
-.sc div{position:relative;z-index:1;padding:24px;width:100%}
+.sc{position:relative;height:320px;border-radius:16px;overflow:hidden;background:#0e0e0e;box-shadow:0 20px 25px -5px rgba(0,0,0,.3);display:flex;align-items:flex-end}
+.sc>img{position:absolute;inset:0;z-index:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.sc::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(0deg,#121212 0,rgba(18,18,18,.6) 50%,rgba(18,18,18,0))}
+.sc div{position:relative;z-index:2;padding:24px;width:100%}
 .sc span{display:inline-block;background:rgba(147,51,234,.2);color:var(--purple);font-size:12px;font-weight:700;padding:4px 12px;border-radius:9999px;margin-bottom:8px}
 .sc h4{color:#fff;font-size:18px}
 .sc p{color:var(--purple);font-weight:700;font-size:14px}
@@ -209,12 +252,14 @@ hr{border:0;border-top:1px solid var(--border)}
 /* nobrainer */
 .nb{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;width:100%;max-width:1152px}
 .nb+.nb{margin-top:32px}
-.nb .ph{box-shadow:0 25px 50px -12px rgba(0,0,0,.25);border-radius:24px}
+.nb .ph{overflow:hidden;padding:0;background:transparent;border:0;outline:0;box-shadow:none;border-radius:10px}
+.nb .ph img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0;outline:0;border-radius:inherit}
 .nb .hd{display:flex;gap:16px;align-items:center;margin-bottom:16px}
 .nb .ico2{width:56px;height:56px;flex:none;border-radius:16px;background:rgba(147,51,234,.2);display:flex;align-items:center;justify-content:center;font-size:24px}
 .nb h3{font-size:20px;line-height:28px}
 .nb p{color:var(--grey);margin-bottom:16px;line-height:26px}
-.nb p.k{color:var(--purple);font-weight:700;line-height:24px}
+.nb p.k{position:relative;padding:16px 18px 16px 50px;border-radius:12px;background:rgba(147,51,234,.08);color:var(--purple);font-weight:700;line-height:24px}
+.nb p.k::before{content:"✓";position:absolute;top:16px;left:16px;width:20px;height:20px;border-radius:50%;background:rgba(147,51,234,.12);display:flex;align-items:center;justify-content:center;color:var(--purple);font-size:13px;line-height:1}
 /* host */
 .host{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(32px,5vw,56px);align-items:center;max-width:1080px;width:100%;margin:0 auto}
 .host .pic{width:100%;max-width:360px;aspect-ratio:4/5;justify-self:center;border-radius:24px;overflow:hidden;background:#121212;box-shadow:0 25px 50px -12px rgba(0,0,0,.25),0 0 80px rgba(147,51,234,.2);display:flex;align-items:center;justify-content:center;color:#666;font-size:13px}
@@ -228,9 +273,9 @@ hr{border:0;border-top:1px solid var(--border)}
 .hstats b{display:block;font-size:24px;font-weight:900;color:var(--purple)}
 .hstats span{font-size:12px;color:var(--muted)}
 /* who */
-.who{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;max-width:1152px}
-.who div{width:172px;text-align:center;font-weight:700;font-size:14px;color:var(--muted)}
-.who .ph{width:172px;height:172px;aspect-ratio:auto;margin-bottom:16px;background:linear-gradient(160deg,#2c2c2c,#161616);box-shadow:0 20px 25px -5px rgba(0,0,0,.3);color:#555}
+.who{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px 16px;width:100%;max-width:1152px}
+.who>div{text-align:center;font-weight:700;font-size:14px;color:var(--muted)}
+.who .ph{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:0;outline:0;border-radius:8px;margin-bottom:16px;padding:0;background:transparent;box-shadow:none}
 /* guarantee */
 .gbox{max-width:896px;width:100%;display:flex;flex-direction:column;gap:48px}
 .g1{background:rgba(28,28,28,.4);border:1px solid rgba(255,255,255,.05);backdrop-filter:blur(12px);border-radius:16px;padding:48px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px;box-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
@@ -255,10 +300,12 @@ footer{background:var(--bg);color:var(--muted);text-align:center;padding:32px 16
 .host{gap:32px}.bonus .img{max-width:450px;margin:0 auto}
 .nb.rev .ph{order:-1}
 .hstats{grid-template-columns:1fr 1fr 1fr}
+.who{grid-template-columns:repeat(3,minmax(0,1fr))}
 .btn{padding:16px 28px;font-size:16px}
 }
 @media(max-width:520px){
 .three,.snap,.stats,.grid3{grid-template-columns:1fr}
+.who{grid-template-columns:repeat(2,minmax(0,1fr))}
 .count b{font-size:22px}.rcard .body{padding:24px}
 .pillbar{padding:12px 16px}
 }
@@ -428,42 +475,46 @@ body.modal-open{overflow:hidden}
 
 <!-- GLIMPSES -->
 <section class="sec light" id="glimpses" style="border-top:1px solid var(--lb)">
-  <div class="wrap">
-    <h2 class="big">Glimpses of the Event</h2>
-    <div class="reels">
-      <div class="insta"><div class="hd"><img class="av" src="assets/dr-ameetparekh-instagram.jpg" alt="Dr. Ameet Parekh profile"><div class="handle"><small>@dr.ameetparekhcoach</small><span class="verified" aria-hidden="true">✓</span></div><a class="vp" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View Profile</a></div><div class="pic"><video class="event-video" preload="metadata" playsinline controls><source src="assets/event_video_01.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><button type="button" class="play" aria-label="Play event video 1"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><p class="video-error" role="status" hidden>Video unavailable. Please try again later.</p></div><div class="ft">28.6K views<a href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View more on Instagram</a></div><a class="watch" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
-      <div class="insta"><div class="hd"><img class="av" src="assets/dr-ameetparekh-instagram.jpg" alt="Dr. Ameet Parekh profile"><div class="handle"><small>@dr.ameetparekhcoach</small><span class="verified" aria-hidden="true">✓</span></div><a class="vp" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View Profile</a></div><div class="pic"><video class="event-video" preload="metadata" playsinline controls><source src="assets/event_video_02.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><button type="button" class="play" aria-label="Play event video 2"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><p class="video-error" role="status" hidden>Video unavailable. Please try again later.</p></div><div class="ft">24.3K views<a href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View more on Instagram</a></div><a class="watch" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
-      <div class="insta"><div class="hd"><img class="av" src="assets/dr-ameetparekh-instagram.jpg" alt="Dr. Ameet Parekh profile"><div class="handle"><small>@dr.ameetparekhcoach</small><span class="verified" aria-hidden="true">✓</span></div><a class="vp" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View Profile</a></div><div class="pic"><video class="event-video" preload="metadata" playsinline controls><source src="assets/event_video_03.mp4" type="video/mp4">Your browser does not support HTML5 video.</video><button type="button" class="play" aria-label="Play event video 3"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><p class="video-error" role="status" hidden>Video unavailable. Please try again later.</p></div><div class="ft">21.8K views<a href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">View more on Instagram</a></div><a class="watch" href="https://www.instagram.com/dr.ameetparekhcoach/?hl=en" target="_blank" rel="noopener noreferrer">Watch on Instagram ↗</a></div>
+  <div class="wrap event-section">
+    <header class="event-intro">
+      <span class="badge">THE EVENT</span>
+      <h2 class="big">Glimpses of <span>the Event</span></h2>
+      <p>Real conversations. Practical frameworks. High-energy learning.</p>
+    </header>
+    <div class="event-gallery">
+      <figure class="event-gallery-card"><img src="assets/event photo 1.png" alt="Dr. Ameet Parekh in conversation with workshop attendees"></figure>
+      <figure class="event-gallery-card"><img src="assets/event photo 2.png" alt="Dr. Ameet Parekh speaking at the event"></figure>
+      <figure class="event-gallery-card"><img src="assets/event photo 3.png" alt="Dr. Ameet Parekh engaging with the audience"></figure>
+    </div>
+    <div class="event-story">
+      <figure class="event-feature"><img src="assets/event photo 4.png" alt="Dr. Ameet Parekh presenting at the workshop"></figure>
+      <div class="event-copy">
+        <h3>One Day. <span>All In.</span></h3>
+        <p class="event-lead">In Business Scale-Up Blueprint, we don't hold anything back.</p>
+        <div class="event-points">
+          <div class="event-point">
+            <span class="event-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/><path d="M8 7h8M8 11h8"/></svg></span>
+            <p>Every strategy, every answer, every framework is shared with you in this one day itself.</p>
+          </div>
+          <div class="event-point">
+            <span class="event-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"/></svg></span>
+            <p>Got questions? You'll get clear, practical answers right there.</p>
+          </div>
+          <div class="event-point">
+            <span class="event-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v5c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <p class="pink">No hidden courses, no "later modules."</p>
+          </div>
+        </div>
+        <div class="implementation-callout">
+          <span class="implementation-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></span>
+          <p><b>Yes, we do have a 3-month Implementation Program, but that's about applying what you learn.</b> We only share details about it at the end of this one-day workshop.</p>
+        </div>
+        <p class="s"><b>This means: when you walk out of Business Scale-Up Blueprint, you walk out with complete clarity.</b></p>
+        <p>And then you have two choices: implement the learnings with me and my team through hand-holding, or take the tools and do it yourself.</p>
+      </div>
     </div>
   </div>
 </section>
-
-<script>
-(function(){
-  document.querySelectorAll('#glimpses .insta').forEach(function(card,index){
-    var video=card.querySelector('.event-video');
-    var playButton=card.querySelector('.play');
-    var errorMessage=card.querySelector('.video-error');
-    function showError(){errorMessage.hidden=false;playButton.hidden=false;}
-    playButton.addEventListener('click',function(){
-      errorMessage.hidden=true;
-      if(video.ended)video.currentTime=0;
-      var playback=video.play();
-      if(playback&&typeof playback.catch==='function')playback.catch(showError);
-    });
-    video.addEventListener('play',function(){
-      playButton.hidden=true;
-      playButton.setAttribute('aria-label','Play event video '+(index+1));
-    });
-    video.addEventListener('pause',function(){if(!video.ended)playButton.hidden=false;});
-    video.addEventListener('ended',function(){
-      playButton.hidden=false;
-      playButton.setAttribute('aria-label','Replay event video '+(index+1));
-    });
-    video.addEventListener('error',showError);
-  });
-})();
-</script>
 
 <!-- WORKED WITH -->
 <section class="sec light worked-with">
@@ -573,26 +624,6 @@ body.modal-open{overflow:hidden}
   </div>
 </section>
 
-<!-- ONE DAY -->
-<section class="sec light">
-  <div class="wrap">
-    <div class="photos"><div class="ph">Event photo 1</div><div class="ph">Event photo 2</div></div>
-    <div class="oneday">
-      <div class="ph" style="aspect-ratio:496/331">Workshop photo</div>
-      <div>
-        <h3>One Day. All In.</h3>
-        <p class="s"><b>In Business Scale-Up Blueprint, we don't hold anything back.</b></p>
-        <p>Every strategy, every answer, every framework is shared with you in this one day itself.</p>
-        <p>Got questions? You'll get clear, practical answers right there.</p>
-        <p class="pink" style="font-style:italic;font-weight:700">No hidden courses, no "later modules."</p>
-        <p class="s"><b>Yes, we do have a 3-month Implementation Program, but that's about applying what you learn.</b> We only share details about it at the end of this one-day workshop.</p>
-        <p class="s"><b>This means: when you walk out of Business Scale-Up Blueprint, you walk out with complete clarity.</b></p>
-        <p>And then you have two choices: implement the learnings with me and my team through hand-holding, or take the tools and do it yourself.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- FOR YOU IF -->
 <section class="sec dark">
   <div class="wrap">
@@ -627,12 +658,12 @@ body.modal-open{overflow:hidden}
   <div class="wrap" style="gap:64px">
     <div class="center"><h2 class="big">Real Business Owners</h2><h3 class="sub">Real Results!</h3></div>
     <div class="grid3">
-      <div class="sc"><div><span>Cash Flow Master</span><h4>CA Jagmohan Singh</h4><p>CAC Reduce By 50% In 1 Month</p></div></div>
-      <div class="sc"><div><span>Yoga coach</span><h4>Sayali Vaidya</h4><p>45 lakhs Per Month</p></div></div>
-      <div class="sc"><div><span>Printing Press Owner</span><h4>Vicky</h4><p>50% Jump in Sales In 3 Months</p></div></div>
-      <div class="sc"><div><span>Ayurvedic Doctor</span><h4>Dr. Renuka Siddhapura</h4><p>20L Per Month</p></div></div>
-      <div class="sc"><div><span>Visa Consultants</span><h4>Divyesh Kathrotiya</h4><p>12L Per Month</p></div></div>
-      <div class="sc"><div><span>Derma Manufacturer</span><h4>Varun Jaidka</h4><p>0 to 30L/month in 7 months!</p></div></div>
+      <div class="sc"><img src="assets/set-1-businessman-01.jpg" alt="Business owner portrait"><div><span>Cash Flow Master</span><h4>CA Jagmohan Singh</h4><p>CAC Reduce By 50% In 1 Month</p></div></div>
+      <div class="sc"><img src="assets/set-1-businessman-02.jpg" alt="Business owner portrait"><div><span>Yoga coach</span><h4>Sayali Vaidya</h4><p>45 lakhs Per Month</p></div></div>
+      <div class="sc"><img src="assets/set-1-businessman-03.jpg" alt="Business owner portrait"><div><span>Printing Press Owner</span><h4>Vicky</h4><p>50% Jump in Sales In 3 Months</p></div></div>
+      <div class="sc"><img src="assets/set-1-businessman-04.jpg" alt="Business owner portrait"><div><span>Ayurvedic Doctor</span><h4>Dr. Renuka Siddhapura</h4><p>20L Per Month</p></div></div>
+      <div class="sc"><img src="assets/set-1-businessman-05.jpg" alt="Business owner portrait"><div><span>Visa Consultants</span><h4>Divyesh Kathrotiya</h4><p>12L Per Month</p></div></div>
+      <div class="sc"><img src="assets/set-1-businessman-06.jpg" alt="Business owner portrait"><div><span>Derma Manufacturer</span><h4>Varun Jaidka</h4><p>0 to 30L/month in 7 months!</p></div></div>
     </div>
     <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
   </div>
@@ -663,7 +694,7 @@ body.modal-open{overflow:hidden}
     <h2 class="big">What Makes This a No-Brainer</h2>
     <div style="width:100%;max-width:1152px">
       <div class="nb">
-        <div class="ph" style="aspect-ratio:552/371">Personalized mentorship photo</div>
+        <div class="ph" style="aspect-ratio:552/371"><img src="assets/01-direct-access-expert-guidance.jpg" alt="Personalized attention and hands-on mentorship"></div>
         <div>
           <div class="hd"><div class="ico2">👥</div><h3>Personalized Attention &amp; Hands-On Mentorship</h3></div>
           <p>We don't just teach—you get personalized attention to ensure you execute and implement everything correctly and effectively.</p>
@@ -678,7 +709,7 @@ body.modal-open{overflow:hidden}
           <p>Whether it's about your <b>marketing strategy, sales funnel, or curriculum design</b>, you'll have the opportunity to get expert insights <b>on demand.</b></p>
           <p class="k">This level of access is a game-changer for those who need extra guidance to move forward confidently!</p>
         </div>
-        <div class="ph" style="aspect-ratio:552/371">Expert access photo</div>
+        <div class="ph" style="aspect-ratio:552/371"><img src="assets/02-personalized-mentorship.png" alt="Direct access to expert insights"></div>
       </div>
     </div>
   </div>
@@ -710,29 +741,81 @@ body.modal-open{overflow:hidden}
   <div class="wrap" style="gap:64px">
     <h2 class="big">Who Should Attend The Event</h2>
     <div class="who">
-      <div><div class="ph">Photo</div>Manufacturer</div>
-      <div><div class="ph">Photo</div>Service Business</div>
-      <div><div class="ph">Photo</div>High Ticket / Real Estate</div>
-      <div><div class="ph">Photo</div>Retail or Ecom</div>
-      <div><div class="ph">Photo</div>Distribution</div>
-      <div><div class="ph">Photo</div>B2B</div>
+      <div><img class="ph" src="assets/01-manufacturer.jpg" alt="Manufacturing business">Manufacturer</div>
+      <div><img class="ph" src="assets/02-service-business.jpg" alt="Service business owner meeting with a client">Service Business</div>
+      <div><img class="ph" src="assets/03-high-ticket-real-estate.jpg" alt="Real estate business professionals">High Ticket / Real Estate</div>
+      <div><img class="ph" src="assets/04-retail-ecommerce.jpg" alt="E-commerce business owner managing orders">Retail or Ecom</div>
+      <div><img class="ph" src="assets/05-distribution.jpg" alt="Distribution warehouse">Distribution</div>
+      <div><img class="ph" src="assets/06-b2b.jpg" alt="B2B business meeting">B2B</div>
     </div>
     <div class="cta-block"><span class="l1">For business owners who refuse to settle</span><span class="l2">for average.</span><a href="#reserve" class="btn">Let's Start</a></div>
   </div>
 </section>
 
 <!-- LEARN MORE -->
-<section class="sec light">
+<section class="sec light" id="learn-more">
   <div class="wrap">
     <h3 class="mid">Learn More Here</h3>
     <div class="reels">
-      <div class="reel-col"><div class="reel" style="background:#121212"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 720K Views</span></div><p class="reel-cap">My proven strategies to get high quality leads</p></div>
-      <div class="reel-col"><div class="reel" style="background:#121212"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 2.1M Views</span></div><p class="reel-cap">Client attraction strategies 2025</p></div>
-      <div class="reel-col"><div class="reel" style="background:#121212"><button class="play"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 1.9M Views</span></div><p class="reel-cap">Creating a high-ticket offer like a pro</p></div>
+      <div class="reel-col"><div class="reel" style="background:#121212"><video class="learn-video" poster="assets/event-video-1.jpg" preload="none" playsinline aria-label="My proven strategies to get high quality leads"><source src="assets/event_video_01.mp4" type="video/mp4"></video><button type="button" class="play learn-play" aria-label="Play video: My proven strategies to get high quality leads"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 720K Views</span></div><p class="reel-cap">My proven strategies to get high quality leads</p></div>
+      <div class="reel-col"><div class="reel" style="background:#121212"><video class="learn-video" poster="assets/event-video-2.jpg" preload="none" playsinline aria-label="Client attraction strategies 2025"><source src="assets/event_video_02.mp4" type="video/mp4"></video><button type="button" class="play learn-play" aria-label="Play video: Client attraction strategies 2025"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 2.1M Views</span></div><p class="reel-cap">Client attraction strategies 2025</p></div>
+      <div class="reel-col"><div class="reel" style="background:#121212"><video class="learn-video" poster="assets/event-video-3.jpg" preload="none" playsinline aria-label="Creating a high-ticket offer like a pro"><source src="assets/event_video_03.mp4" type="video/mp4"></video><button type="button" class="play learn-play" aria-label="Play video: Creating a high-ticket offer like a pro"><svg viewBox="0 0 24 24"><path d="M6 3l15 9-15 9z"/></svg></button><span class="views">👁 1.9M Views</span></div><p class="reel-cap">Creating a high-ticket offer like a pro</p></div>
     </div>
     <div class="cta-block"><span class="l1">₹1 Cr+ in revenue?</span><span class="l2">It's time to think bigger.</span><a href="#reserve" class="btn">Let's Start</a></div>
   </div>
 </section>
+
+<script>
+(function(){
+  var section=document.getElementById('learn-more');
+  if(!section)return;
+  var videos=Array.prototype.slice.call(section.querySelectorAll('.learn-video'));
+  var activeVideo=null;
+
+  function showPlay(video,show){
+    var button=video.parentElement.querySelector('.learn-play');
+    if(button)button.hidden=!show;
+  }
+  function pauseOthers(current){
+    videos.forEach(function(video){if(video!==current&&!video.paused)video.pause();});
+  }
+  function handlePlay(video){
+    activeVideo=video;
+    pauseOthers(video);
+    showPlay(video,false);
+  }
+
+  videos.forEach(function(video){
+    var button=video.parentElement.querySelector('.learn-play');
+    video.addEventListener('play',function(){handlePlay(video);});
+    video.addEventListener('pause',function(){
+      showPlay(video,true);
+      if(activeVideo===video)activeVideo=null;
+    });
+    video.addEventListener('ended',function(){showPlay(video,true);});
+    video.addEventListener('error',function(){
+      showPlay(video,true);
+      console.error('Learn More video failed to load:',video.currentSrc||video.querySelector('source').src);
+    });
+    button.addEventListener('click',function(){
+      if(video.ended)video.currentTime=0;
+      activeVideo=video;
+      pauseOthers(video);
+      video.controls=true;
+      if(video.networkState===HTMLMediaElement.NETWORK_EMPTY)video.load();
+      video.play().catch(function(error){
+        showPlay(video,true);
+        if(activeVideo===video)activeVideo=null;
+        console.error('Learn More video could not start:',error);
+      });
+    });
+  });
+
+  window.addEventListener('scroll',function(){
+    if(activeVideo&&!activeVideo.paused)activeVideo.pause();
+  },{passive:true});
+})();
+</script>
 
 <!-- HARSH TRUTHS -->
 <section class="sec light">
